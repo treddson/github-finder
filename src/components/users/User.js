@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
-class User extends Component {
+export class User extends Component {
   componentDidMount() {
     this.props.getUser(this.props.match.params.login);
   }
@@ -13,6 +13,7 @@ class User extends Component {
       bio,
       blog,
       login,
+      html_url,
       followers,
       following,
       public_repos,
@@ -21,7 +22,30 @@ class User extends Component {
 
     const { loading } = this.props;
 
-    return <div>{bio}</div>;
+    return (
+      <Fragment>
+        <ul>
+          <li>
+            <strong>Name:</strong> {name}
+          </li>
+          <li>
+            <strong>Bio:</strong> {bio}
+          </li>
+          <li>
+            <strong>Login:</strong> {login}
+          </li>
+          <li>
+            <strong>Location:</strong> {location}{" "}
+          </li>
+          <li>
+            <strong>Following:</strong> {following}{" "}
+          </li>
+          <li>
+            <strong>Public Repositories:</strong> {public_repos}{" "}
+          </li>
+        </ul>
+      </Fragment>
+    );
   }
 }
 
