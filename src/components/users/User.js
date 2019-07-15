@@ -63,9 +63,6 @@ export class User extends Component {
                 <p>{bio}</p>
               </Fragment>
             )}
-            <a href={html_url} className="btn btn-dark my-1">
-              Visit Github profile
-            </a>
             <ul>
               <li>
                 {login && (
@@ -89,7 +86,15 @@ export class User extends Component {
                 )}
               </li>
             </ul>
+            <a href={html_url} className="btn btn-dark my-1">
+              Visit Github profile
+            </a>
           </div>
+        </div>
+        <div className="card text-center">
+          <div className="badge badge-primary">Followers: {followers}</div>
+          <div className="badge badge-success">Following: {following}</div>
+          <div className="badge badge-danger">Public Repos: {public_repos}</div>
         </div>
       </Fragment>
     );
